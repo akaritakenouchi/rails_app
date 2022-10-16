@@ -1,0 +1,24 @@
+<h3>Tweet一覧</h3>
+<div class="link"><%= link_to "新規投稿へ", new_tweet_path %></div>
+
+
+<%= link_to "あいうえお", new_tweet_path %>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="post">
+      <%= t.name %>
+      <%= t.content %>
+      <%= t.task1 %>
+      <%= t.task2 %>
+      <%= t.task3 %>
+      <%= t.task4 %>
+      <%= link_to "詳細へ", tweet_path(t.id) %>
+      <%= link_to "編集する", edit_tweet_path(t.id) %>
+      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+      <% t.buttons.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

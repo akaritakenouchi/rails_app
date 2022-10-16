@@ -1,0 +1,23 @@
+<h1>GeekTwitter</h1>
+<h3>新規Tweet</h3>
+<%= form_for @tweet do |f| %>
+<div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %>
+    <%= f.label :endday %>
+    <%= f.text_field :content, :size => 140 %>
+
+    <div class="check_box">
+        <%= f.collection_check_boxes(:button_ids, Button.all, :id, :name) do |tag| %>
+            <div class='form-check'>
+            <%= tag.label do %>
+            <%= tag.check_box %>
+            <%= tag.text %>
+        <% end %>
+            </div>
+        <% end %>
+    </div>
+</div>
+<%= f.submit "Tweetする" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
