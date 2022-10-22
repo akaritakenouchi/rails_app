@@ -3,7 +3,7 @@
 <%= form_for @tweet do |f| %>
 <div class="field">
     <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %>
+    <%= f.text_field :body, :size => 10 ,class:'frm-control', placeholder: 'ADD'%>
     <%= f.label :endday %>
     <%= f.text_field :endday, :size => 140 %>
 

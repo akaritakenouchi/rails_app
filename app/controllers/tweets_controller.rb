@@ -2,7 +2,6 @@ class TweetsController < ApplicationController
     before_action :authenticate_user!
     def index
         @tweets= Tweet.all
-
     end
     def new
         @tweet = Tweet.new
@@ -37,6 +36,9 @@ class TweetsController < ApplicationController
         tweet = Tweet.find(params[:id])
         tweet.destroy
         redirect_to action: :index
+    end
+    def geek
+        
     end
 
     private
