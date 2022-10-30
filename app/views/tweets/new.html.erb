@@ -2,11 +2,12 @@
 <h3>新規Tweet</h3>
 <%= form_for @tweet do |f| %>
 <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :size => 10 ,class:'frm-control', placeholder: 'ADD Aniversary'%>
     <%= f.label :body %>
-    <%= f.text_field :body, :size => 10 ,class:'frm-control', placeholder: 'ADD'%>
+    <%= f.text_field :body, :size => 10 ,class:'frm-control', placeholder: 'ADD Detail'%>
     <%= f.label :endday %>
-    <%= f.text_field :endday, :size => 140 %>
-
+    <%= f.date_field :endday, :size => 30 %>
 </div>
 <%= f.submit "Tweetする" %>
 <% end %>
